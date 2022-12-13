@@ -1,8 +1,12 @@
 const express = require('express');
 const cervejas = require('./cervejas');
-
+const cors = require('cors');
 const app = express();
+
 app.use(express.json());
+app.use(cors({
+    origin: '*'
+}));
 
 app.get('/', function(req, res){
     res.send('<h1>Cervejas</h1>');
